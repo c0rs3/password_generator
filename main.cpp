@@ -3,8 +3,7 @@
 
 using namespace generator;
 // operator overloading for displaying char stats
-std::ostream &operator<<(std::ostream &stream, std::vector<uint32_t> char_stats)
-{
+std::ostream &operator<<(std::ostream &stream, std::vector<uint32_t> char_stats) {
     stream << "Upper Characters: " << char_stats[0] << std::endl;
     stream << "Lower Characters: " << char_stats[1] << std::endl;
     stream << "Digits: " << char_stats[2] << std::endl;
@@ -12,9 +11,7 @@ std::ostream &operator<<(std::ostream &stream, std::vector<uint32_t> char_stats)
     return stream;
 }
 
-int main()
-{
-
+int main() {
     std::string sample_string = "Aa1!";
     std::string sample_password1 = generate_password(18); // generates a 18-char-password
     std::string sample_password2 = "QDMM,MNi0ISP7dYi";    // sample password for demonstrating remove_adjacent_duplicate() & has_adjacent_duplicates() functions
