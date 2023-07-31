@@ -28,7 +28,6 @@ std::cout << sample_password << std::endl;
 *entropy_bits = length * log2(pool_size)*
 - pool_size is the unique characters from which we build the password
 - length is the number of chars in the string <br />
-[Source](https://www.omnicalculator.com/other/password-entropy)
 
 ```cpp
 std::string sample_password = generate_password(18);
@@ -40,6 +39,7 @@ std::cout << "Entropy bits of the generated password: " << bits << " bits" << st
 ```
 117.983 bits // varies on runtime
 ```
+[Source](https://www.omnicalculator.com/other/password-entropy)
 ### char_stats
 - Returns a vector with the quantities of different char types
 ```
