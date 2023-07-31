@@ -1,8 +1,9 @@
 #include <iostream>
 #include "password_generator.hpp"
+
 using namespace generator;
 
-std::ostream &operator<<(std::ostream &stream, std::vector<uint32_t> char_stats){
+std::ostream &operator<<(std::ostream &stream, std::vector<uint32_t> char_stats) {
     stream << "Upper Characters: " << char_stats[0] << std::endl;
     stream << "Lower Characters: " << char_stats[1] << std::endl;
     stream << "Digits: " << char_stats[2] << std::endl;
@@ -10,8 +11,7 @@ std::ostream &operator<<(std::ostream &stream, std::vector<uint32_t> char_stats)
     return stream;
 }
 
-#if 1
-int main(){
+int main() {
     std::string sample_string = "Aa1!";
     std::string sample_password1 = generate_password(18); // generates a 18-char-password
     std::string sample_password2 = "QDMM,MNi0ISP7dYi";    // sample password for demonstrating remove_duplicate() & any_dupes() functions
@@ -25,7 +25,7 @@ int main(){
     /* upper case -> 0
      *  lower case -> 1
      *  digit -> 2
-     *  special -> 3 */
+     *  symbols -> 3 */
 
     std::cout << "Char stats of " << sample_string << "\n"
               << char_stats(sample_string) << std::endl
@@ -41,8 +41,3 @@ int main(){
     std::cout << "After removing duplicates: " << sample_password2 << std::endl;
     std::cout << "Any duplicates? " << any_dupes(sample_password2) << std::endl;
 }
-#elif 0
-int main()
-{ // for debugging later
-}
-#endif
