@@ -4,9 +4,7 @@ A simple C++ password generator made with uniform integer distribution.
 ## Usage/Examples
 ### Setup
 - Include ``` #include "password_generator.hpp" ```   
-``` 
-// generates a 18-char-password        
-```
+
 ### strengthen_password
 - Strengthens the password to maximum possible entropy bits.
 ```cpp
