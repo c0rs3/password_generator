@@ -1,3 +1,6 @@
+# password_generator
+
+A simple C++ password generator made with uniform integer distribution.
 ## Usage/Examples
 ### Setup
 - Include ``` #include "password_generator.hpp" ```   
