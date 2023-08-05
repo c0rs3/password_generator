@@ -60,6 +60,7 @@ namespace generator{
 
         else if (is_symbol_char)
             return symbol_;
+        return upper_;
     };
 
     std::vector<uint32_t> char_stats(const std::string &str) {
@@ -165,8 +166,8 @@ namespace generator{
                 break;
             }
         }
-        if (entropy_bits(password))
-            strengthen_password(password);
+        if (entropy_bits(password) < max_entropy(password.length()))
+           strengthen_password(password);
     }
 
     std::string generate_password(uint32_t length = 8) {
@@ -185,8 +186,7 @@ namespace generator{
     }
 
     void remove_adjacent_duplicates(std::string &str) {
-        for (size_t i = 1; i < str.size() - 1; i++)
-        {
+        for (size_t i = 1; i < str.size() - 1; i++) {
             while (str[i] == str[i + 1] || str[i] == str[i - 1])
                 str[i] = ascii_pool[random_int()];
         }
