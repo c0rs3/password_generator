@@ -1,10 +1,6 @@
-# password_generator
-
-A simple C++ password generator made with uniform integer distribution.
 ## Usage/Examples
 ### Setup
-- Include ``` #include "password_generator.hpp" ```   
-
+- Include ``` #include "password_generator.hpp" ``` 
 ### strengthen_password
 - Strengthens the password to maximum possible entropy bits.
 ```cpp
@@ -28,7 +24,8 @@ std::cout << sample_password << std::endl;
 - Calculates the entropy bits of given string
 *entropy_bits = length * log2(pool_size)*
 - pool_size is the unique characters from which we build the password
-- length is the number of chars in the string <br />
+- length is the number of chars in the string
+[Source](https://www.omnicalculator.com/other/password-entropy)
 
 ```cpp
 std::string sample_password = generate_password(18);
@@ -37,13 +34,13 @@ double bits = entropy_bits(sample_password2);
 
 std::cout << "Entropy bits of the generated password: " << bits << " bits" << std::endl;
 ```
+Output:
 ```
 117.983 bits // varies on runtime
 ```
-[Source](https://www.omnicalculator.com/other/password-entropy)
 ### char_stats
 - Returns a vector with the quantities of different char types
-```
+```cpp
 std::string sample_password = "P@ssw0rd123";
 
 std::vector<uint32_t> stats = char_stats(sample_password);
@@ -62,4 +59,26 @@ std::cout << "Char type of 'A': " << get_char_type('A') << ":" << std::endl;
  *  lower case -> 1
  *  digit -> 2
  *  symbols -> 3  */
+```
+```cpp
+std::string password1 = "Abcde";
+std::string password2 = "AaaBbbbCcc";
+std::cout << "Does password1 have adjacent duplicates? " << has_adjacent_duplicates(password1) << std::endl;
+std::cout << "Does password2 have adjacent duplicates? " << has_adjacent_duplicates(password2) << std::endl;
+```
+Output:
+```
+Does password1 have adjacent duplicates? 0
+Does password2 have adjacent duplicates? 
+```
+```cpp
+std::string password3 = "AaaBbbbCcc"; // Password with adjacent duplicates
+std::cout << "Password before removing adjacent duplicates: " << password3 << std::endl;
+remove_adjacent_duplicates(password3);
+std::cout << "Password after removing adjacent duplicates: " << password3 << std::endl;
+```
+Output:
+```
+Password after removing adjacent duplicates: ABc
+Password before removing adjacent duplicates: AaaBbbbCcc
 ```
