@@ -1,3 +1,5 @@
+# password generator
+- A simple C++ password generator made with ```chrono``` and ```random```
 ## Usage/Examples
 ### Setup
 - Include ``` #include "password_generator.hpp" ``` 
