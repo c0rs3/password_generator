@@ -73,6 +73,7 @@ Output:
 Does password1 have adjacent duplicates? 0
 Does password2 have adjacent duplicates? 
 ```
+---
 ```cpp
 std::string password3 = "AaaBbbbCcc"; // Password with adjacent duplicates
 std::cout << "Password before removing adjacent duplicates: " << password3 << std::endl;
