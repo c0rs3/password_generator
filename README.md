@@ -1,5 +1,5 @@
 # password generator
-- A simple C++ password generator made with ```chrono``` and ```random```
+- MSVC C++ password generator 
 ## Usage/Examples
 ### Setup
 - Include ``` #include "password_generator.hpp" ``` 
