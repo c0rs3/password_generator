@@ -1,8 +1,12 @@
 # password generator
 - MSVC C++ password generator 
+## Setup
+### VSCode
+- Download & install [Download Build Tools for Visual Studio 2022](https://aka.ms/vs/17/release/vs_BuildTools.exe)
+- Run ```code password_generator``` using ```Developer Command Prompt Prompt for VS 2022```
+- In the main directory run ```cl /EHsc demo.cpp``` to compile & build
+- Run ```.\demo.exe``` to execute
 ## Usage/Examples
-### Setup
-- Include ``` #include "password_generator.hpp" ``` 
 ### strengthen_password
 - Strengthens the password to maximum possible entropy bits.
 ```cpp
@@ -26,8 +30,8 @@ std::cout << sample_password << std::endl;
 - Calculates the entropy bits of given string
 *entropy_bits = length * log2(pool_size)*
 - pool_size is the unique characters from which we build the password
-- length is the number of chars in the string
-[Source](https://www.omnicalculator.com/other/password-entropy)
+- length is the number of chars in the string \
+ ([source](https://www.omnicalculator.com/other/password-entropy))
 
 ```cpp
 std::string sample_password = generate_password(18);
@@ -69,6 +73,7 @@ std::cout << "Does password1 have adjacent duplicates? " << has_adjacent_duplica
 std::cout << "Does password2 have adjacent duplicates? " << has_adjacent_duplicates(password2) << std::endl;
 ```
 Output:
+
 ```
 Does password1 have adjacent duplicates? 0
 Does password2 have adjacent duplicates? 
