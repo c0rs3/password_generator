@@ -4,8 +4,8 @@
 ### VSCode
 - Download & install [Download Build Tools for Visual Studio 2022](https://aka.ms/vs/17/release/vs_BuildTools.exe)
 - Run ```code password_generator``` using ```Developer Command Prompt Prompt for VS 2022```
-- In the main directory run ```cl /EHsc demo.cpp``` to compile & build
-- Run ```.\demo.exe``` to execute
+- In the main directory run ```cl /EHsc example.cpp``` to compile & build
+- ```.\example.exe``` to execute
 ## Usage/Examples
 ### strengthen_password
 - Strengthens the password to maximum possible entropy bits.
