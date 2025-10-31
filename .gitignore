@@ -1,5 +1,5 @@
+# Task, launch files
 .vscode
-*.exe
-*.obj
-*.ilk
-*.pdb
+
+# CMake files
+build

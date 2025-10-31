@@ -1,3 +1,4 @@
+#pragma once
 #ifndef PASSWORD_GENERATOR
 #define PASSWORD_GENERATOR
 #include <random>

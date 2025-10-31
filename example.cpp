@@ -1,14 +1,26 @@
 #include <iostream>
-#include "password_generator.hpp"
+#include <password_generator.h>
 
 using namespace generator;
 
-std::ostream &operator<<(std::ostream &stream, std::vector<uint32_t> char_stats) {
+std::ostream& operator<<(std::ostream& stream, std::vector<uint32_t> char_stats) {
     stream << "Uppercase characters: " << char_stats[0] << std::endl;
     stream << "Lowercase characters: " << char_stats[1] << std::endl;
     stream << "Digits: " << char_stats[2] << std::endl;
     stream << "Symbols: " << char_stats[3] << std::endl;
     return stream;
+}
+
+void benchmark_strength(const size_t& size = 10) {
+    std::string generated_password = generator::generate_password(18);
+    for (size_t i = 0; i < size; i++) {
+        if (entropy_bits(generated_password) == max_entropy(18)) {
+            std::cout << "Maximum possible strength password produced|" << size - i << " remaining..." << std::endl;
+        }
+        else {
+            std::cout << "Failed to produce maximum possible strength " << std::endl;
+        }
+    }
 }
 
 void test_strengthen_password(std::string password = "WeakPassword") {
@@ -37,11 +49,11 @@ int main() {
     std::cout << "Random integer: " << random_int(0, 10) << std::endl;
 
     std::cout << "Entropy bits of " << sample_password1 << ":\n"
-              << entropy_bits(sample_password1) << " bits" << std::endl;
+        << entropy_bits(sample_password1) << " bits" << std::endl;
     std::cout << "Number of tries required to brute force password: " << pow(2, entropy_bits(sample_password1)) << std::endl
-              << std::endl;
+        << std::endl;
     std::cout << "Maximum entropy of a 18 character password: " << max_entropy(18) << std::endl
-              << std::endl; // returns the maximum possible entropy bits of a 18 char password
+        << std::endl; // returns the maximum possible entropy bits of a 18 char password
 
     std::cout << "Char type of 'A': " << get_char_type('A') << ":" << std::endl;
     /* upper case -> 0
@@ -60,4 +72,5 @@ int main() {
 
     return 0;
 }
+#else
 #endif
